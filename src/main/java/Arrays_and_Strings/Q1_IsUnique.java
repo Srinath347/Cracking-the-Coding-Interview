@@ -1,4 +1,4 @@
-package Arrays;
+package Arrays_and_Strings;
 
 import java.util.HashSet;
 import java.util.Scanner;
@@ -9,14 +9,14 @@ import java.util.Scanner;
  *
  * Author : Srinath
  */
-public class IsUnique {
+public class Q1_IsUnique {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String input = scan.next();
-        System.out.println("output  1: " + isUnique_BruteForce(input));
-        System.out.println("output 2 : " + isUnique_HashSet(input));
-        System.out.println("output 2 : " + isUnique_NoExtraSpace(input));
+        System.out.println("brute force output : " + isUnique_BruteForce(input));
+        System.out.println("hash map output : " + isUnique_HashSet(input));
+        System.out.println("constant space output : " + isUnique_NoExtraSpace(input));
     }
 
     /**
@@ -53,10 +53,11 @@ public class IsUnique {
     }
 
     /**
-     * with no extra space assuming String has atmost 26 lowercase alphabets.
+     * with no extra space assuming String has at most 26 lowercase alphabets.
      * Does not work for unicode strings
+     *
      * TC : O(N)
-     * SC : O(N)
+     * SC : O(1)
      */
     private static boolean isUnique_NoExtraSpace(String input) {
         int unique_checker = 0;
